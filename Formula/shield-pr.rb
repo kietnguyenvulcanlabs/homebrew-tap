@@ -10,6 +10,7 @@ class ShieldPr < Formula
   license "MIT"
 
   depends_on "python@3.11"
+  depends_on "poetry" => :build
 
   def install
     # Install via pip
@@ -18,9 +19,12 @@ class ShieldPr < Formula
     # Create virtualenv in prefix
     system python3, "-m", "venv", libexec/"venv"
 
-    # Install package
-    system libexec/"venv/bin/pip", "install", "--upgrade", "pip"
-    system libexec/"venv/bin/pip", "install", *std_pip_args(buildpath)
+    # Install package (poetry available via build dependency)
+    ENV.prepend_path "PATH", Formula["poetry"].opt_bin
+    pip_path = libexec/"venv/bin/pip"
+    system pip_path.to_s, "install", "--upgrade", "pip"
+    system pip_path.to_s, "install", "poetry-core"
+    system pip_path.to_s, "install", "--no-build-isolation", buildpath.to_s
 
     # Create wrapper script
     bin.install libexec/"venv/bin/shield-pr" => "shield-pr"
