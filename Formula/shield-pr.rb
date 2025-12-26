@@ -2,11 +2,11 @@
 # Formula documentation: https://docs.brew.sh/Formula-Cookbook
 # Installation: brew install kietnguyenvulcanlabs/tap/shield-pr
 
-class CodeReviewAssistant < Formula
+class ShieldPr < Formula
   desc "AI-powered code review CLI using LangChain + Gemini"
   homepage "https://github.com/kietnguyenvulcanlabs/shield-pr"
-  url "https://github.com/kietnguyenvulcanlabs/shield-pr/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
+  url "https://github.com/kietnguyenvulcanlabs/shield-pr/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "11d8c92135df2e5046116f674b55f7534899e98ff3a87d8e26cada548fc7587a"
   license "MIT"
 
   depends_on "python@3.11"
