@@ -6,16 +6,10 @@ class CodeReviewAssistant < Formula
   desc "AI-powered code review CLI using LangChain + Gemini"
   homepage "https://github.com/kietnguyenvulcanlabs/shield-pr"
   url "https://github.com/kietnguyenvulcanlabs/shield-pr/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "AUTO"  # Will be calculated on release
+  sha256 "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
   license "MIT"
 
   depends_on "python@3.11"
-
-  resource "requirements" do
-    # Pin specific versions for stability
-    url "https://raw.githubusercontent.com/kietnguyenvulcanlabs/shield-pr/v0.1.0/pyproject.toml"
-    sha256 "AUTO"
-  end
 
   def install
     # Install via pip
